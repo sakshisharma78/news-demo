@@ -127,6 +127,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const isAdminPage = pathname.includes('admin.html');
     const isCategoryPage = pathname.includes('category.html');
 
+    // Global Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navbar = document.querySelector('.navbar');
+    if (mobileMenuBtn && navbar) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navbar.classList.toggle('mobile-open');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navbar.classList.contains('mobile-open')) {
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+            } else {
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            }
+        });
+    }
+
+    // Advanced Scroll Animations setup (Intersection Observer)
+    window.scrollObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-in').forEach(el => {
+        window.scrollObserver.observe(el);
+    });
+
     // ==========================================
     // HOMEPAGE LOGIC
     // ==========================================
@@ -154,12 +185,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            posts.forEach(news => {
+            posts.forEach((news, idx) => {
                 const article = document.createElement('a');
                 article.href = `article.html?id=${news.id}`; // Navigation
                 article.className = 'news-card animate-in';
+                article.style.transitionDelay = `${(idx % 10) * 0.05}s`;
                 article.innerHTML = createCardHTML(news);
                 newsFeed.appendChild(article);
+                if (window.scrollObserver) window.scrollObserver.observe(article);
             });
         };
 
@@ -280,6 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </td>
                 `;
                 adminTableBody.appendChild(tr);
+                if (window.scrollObserver) window.scrollObserver.observe(tr);
             });
 
             // Delete event listeners
