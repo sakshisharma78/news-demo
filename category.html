@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories | NewsHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="ph-fill ph-check-circle"></i></span>
+                NewsHub
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="category.html" class="active">Categories</a>
+                <a href="admin.html">Dashboard Demo</a>
+            </div>
+            <div class="search-bar">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" id="site-search" placeholder="Search categories...">
+            </div>
+            <button class="mobile-menu-btn"><i class="ph ph-list"></i></button>
+        </div>
+    </nav>
+
+    <main class="container" style="margin-top: 60px;">
+        <header class="section-title animate-in"
+            style="font-size: 2.5rem; justify-content: center; border: none; flex-direction: column;">
+            <h1>Browse Topics</h1>
+            <p
+                style="font-size: 1.1rem; color: var(--text-muted); font-weight: normal; font-family: var(--font-body); margin-top: 10px;">
+                Deep dive into the subjects that matter most.</p>
+        </header>
+
+        <!-- Interactive Categories -->
+        <div class="categories-wrapper animate-in"
+            style="animation-delay: 0.1s; justify-content: center; gap: 16px; margin-bottom: 60px;">
+            <button class="category-btn active">All</button>
+            <button class="category-btn">Tech</button>
+            <button class="category-btn">Business</button>
+            <button class="category-btn">Science</button>
+            <button class="category-btn">Lifestyle</button>
+            <button class="category-btn">Finance</button>
+        </div>
+
+        <section class="news-feed animate-in" id="news-feed" style="animation-delay: 0.2s;">
+            <!-- Categories layout loads the same feed logic from script.js -->
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

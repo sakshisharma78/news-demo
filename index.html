@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsHub | Modern Content Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="ph-fill ph-check-circle"></i></span>
+                NewsHub
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="category.html">Categories</a>
+                <a href="admin.html">Dashboard Demo</a>
+            </div>
+            <div class="search-bar">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" id="site-search" placeholder="Search articles...">
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Slider (Replaces static hero) -->
+        <section class="hero-slider-section animate-in">
+            <div class="slider-container" id="hero-slider">
+                <!-- Slide 1 -->
+                <div class="slide active"
+                    style="background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop');">
+                    <div class="slide-gradient"></div>
+                    <div class="slide-content">
+                        <span class="slide-tag">Breaking</span>
+                        <h1 class="slide-title">The Future of AI is Agentic and Autonomous.</h1>
+                        <p class="slide-desc">Discover how the latest advancements in artificial intelligence are
+                            reshaping the tech industry, automating workflows, and building the internet of tomorrow.
+                        </p>
+                        <a href="article.html?id=n1" class="btn btn-primary">Read Full Story <i
+                                class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop');">
+                    <div class="slide-gradient"></div>
+                    <div class="slide-content">
+                        <span class="slide-tag">Business</span>
+                        <h1 class="slide-title">The Rise of Solo Entrepreneurs</h1>
+                        <p class="slide-desc">How new asynchronous tools and AI are empowering single founders to build
+                            million-dollar businesses without employees.</p>
+                        <a href="article.html?id=n2" class="btn btn-primary">Read Full Story <i
+                                class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Controls slider -->
+            <div class="slider-controls">
+                <button class="slider-btn" id="slider-prev"><i class="ph ph-caret-left"></i></button>
+                <button class="slider-btn" id="slider-next"><i class="ph ph-caret-right"></i></button>
+            </div>
+        </section>
+
+        <div class="main-layout">
+            <!-- Left Column: Main Feed -->
+            <div class="feed-column">
+
+                <!-- Category Filter -->
+                <div class="categories-wrapper animate-in" style="animation-delay: 0.1s;">
+                    <button class="category-btn active">All</button>
+                    <button class="category-btn">Tech</button>
+                    <button class="category-btn">Business</button>
+                    <button class="category-btn">Lifestyle</button>
+                    <button class="category-btn">Finance</button>
+                </div>
+
+                <!-- Feed -->
+                <div class="news-feed" id="news-feed">
+                    <!-- Cards will render here -->
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="sidebar-column">
+                <!-- Trending UI Polish -->
+                <div class="trending-section glass-card animate-in" style="animation-delay: 0.2s;">
+                    <h3 class="section-title"><i class="ph-fill ph-fire"></i> Trending Now</h3>
+                    <div class="trending-list">
+                        <a href="article.html?id=n4" class="trending-card">
+                            <span class="rank">01</span>
+                            <div class="trending-info">
+                                <h4>Crypto Markets Stabilize After Clarity</h4>
+                                <span class="meta">Finance • 1 day ago</span>
+                            </div>
+                        </a>
+                        <a href="article.html?id=n3" class="trending-card">
+                            <span class="rank">02</span>
+                            <div class="trending-info">
+                                <h4>Why 'Dumb Phones' Are Making a Comeback</h4>
+                                <span class="meta">Lifestyle • 1 day ago</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enhanced Newsletter -->
+                <div class="newsletter-box animate-in" style="animation-delay: 0.3s;">
+                    <h3>Get the Daily Brief</h3>
+                    <p>The smartest news in your inbox every morning. Join 500k+ pros.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="name@company.com">
+                        <button>Subscribe <i class="ph-bold ph-paper-plane-right"></i></button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- NEW Global Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon"><i class="ph-fill ph-check-circle"></i></span>
+                    NewsHub
+                </a>
+                <p>The premium daily news platform for the modern professional. Fast, beautiful, and agentic.</p>
+                <div class="footer-badge">
+                    <i class="ph-fill ph-sparkle"></i> Powered by AI Content System (Demo)
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="#">Latest News</a></li>
+                    <li><a href="#">Top Trending</a></li>
+                    <li><a href="#">Editor's Picks</a></li>
+                    <li><a href="#">RSS Feed</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <span>© 2026 NewsHub Inc. Simulated for Demo Purposes.</span>
+            <div class="social-links">
+                <a href="#"><i class="ph-fill ph-twitter-logo"></i></a>
+                <a href="#"><i class="ph-fill ph-linkedin-logo"></i></a>
+                <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

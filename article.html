@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article | NewsHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="ph-fill ph-check-circle"></i></span>
+                NewsHub
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="category.html">Categories</a>
+                <a href="admin.html">Dashboard Demo</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="ph ph-list"></i></button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Article Header -->
+        <header class="article-header animate-in">
+            <span class="category-badge" id="art-category">Category</span>
+            <h1 id="art-title">Loading Article...</h1>
+
+            <div class="article-meta">
+                <div class="author-info">
+                    <img src="https://ui-avatars.com/api/?name=NewsHub&background=2563eb&color=fff"
+                        class="author-avatar" alt="Author">
+                    <span>By <strong>NewsHub Editorial</strong></span>
+                </div>
+                <span id="art-date">Published: -</span>
+            </div>
+        </header>
+
+        <!-- Article Cover Image -->
+        <div class="article-cover animate-in" style="animation-delay: 0.2s;" id="art-cover">
+            <img src="" id="art-cover-img" alt="">
+        </div>
+
+        <!-- Article Content -->
+        <article class="article-content animate-in" style="animation-delay: 0.3s;" id="art-content">
+            <div class="skeleton" style="height: 20px; width: 100%; margin-bottom: 12px;"></div>
+            <div class="skeleton" style="height: 20px; width: 100%; margin-bottom: 12px;"></div>
+            <div class="skeleton" style="height: 20px; width: 80%; margin-bottom: 24px;"></div>
+        </article>
+
+        <!-- Social Share UI -->
+        <div class="share-bar animate-in">
+            <span style="font-weight: 600; align-self: center; margin-right: 16px;">Share this story:</span>
+            <button class="share-btn"><i class="ph-fill ph-twitter-logo"></i></button>
+            <button class="share-btn"><i class="ph-fill ph-linkedin-logo"></i></button>
+            <button class="share-btn"><i class="ph-fill ph-facebook-logo"></i></button>
+            <button class="share-btn"><i class="ph ph-link"></i></button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-bottom">
+            <span>© 2026 NewsHub Inc. Simulated for Demo Purposes.</span>
+            <div class="social-links">
+                <a href="#"><i class="ph-fill ph-twitter-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

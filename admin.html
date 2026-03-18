@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | NewsHub Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            background: #f8fafc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="ph-fill ph-check-circle"></i></span>
+                NewsHub
+            </a>
+
+            <nav class="admin-menu">
+                <a href="admin.html" class="active"><i class="ph ph-squares-four"></i> Dashboard</a>
+                <a href="#"><i class="ph ph-file-text"></i> All Articles</a>
+                <a href="#"><i class="ph ph-robot"></i> AI Engine</a>
+                <a href="#"><i class="ph ph-users"></i> Authors</a>
+                <a href="#"><i class="ph ph-gear"></i> Settings</a>
+                <a href="index.html" style="margin-top: auto; color: var(--accent-blue);"><i
+                        class="ph ph-arrow-left"></i> Back to Site</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header animate-in">
+                <div>
+                    <h1 style="font-size: 2rem;">Platform Dashboard</h1>
+                    <p style="color: var(--text-muted);">Manage content and simulated auto-agents</p>
+                </div>
+                <div style="display: flex; gap: 16px; align-items: center;">
+                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);"><i
+                            class="ph-fill ph-circle text-green-500"></i> Engine Active</span>
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=0f172a&color=fff"
+                        style="width: 40px; border-radius: 50%;">
+                </div>
+            </header>
+
+            <div class="admin-panel-grid">
+                <!-- Data Table (Right/Bottom Side) -->
+                <div class="admin-box animate-in" style="animation-delay: 0.1s; grid-column: 1 / -1;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <h3 style="font-size: 1.2rem;">Published Content</h3>
+                        <div class="search-bar"
+                            style="width: 200px; padding: 6px 16px; background: white; border: 1px solid var(--border-color);">
+                            <i class="ph ph-magnifying-glass"></i>
+                            <input type="text" placeholder="Search ID..." disabled>
+                        </div>
+                    </div>
+
+                    <div style="overflow-x: auto;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Headline</th>
+                                    <th>Category</th>
+                                    <th>Source</th>
+                                    <th>Published</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-table-body">
+                                <!-- Populated dynamically by script.js JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Simulation Tools -->
+                <div class="admin-box animate-in" style="animation-delay: 0.2s;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
+                        <i class="ph-bold ph-pencil-line"></i> Editorial Publish
+                    </h3>
+
+                    <div class="form-group">
+                        <label>Headline</label>
+                        <input type="text" id="admin-title" class="form-control" placeholder="Enter engaging title...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="admin-category" class="form-control">
+                            <option value="Tech">Tech</option>
+                            <option value="Business">Business</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Lifestyle">Lifestyle</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Article Content</label>
+                        <textarea id="admin-desc" class="form-control"
+                            placeholder="Write or paste full content here..."></textarea>
+                    </div>
+
+                    <button id="publish-btn" class="btn btn-dark" style="width: 100%; justify-content: center;">Publish
+                        Story</button>
+                </div>
+
+                <div class="admin-box animate-in"
+                    style="animation-delay: 0.3s; background: linear-gradient(145deg, white, var(--hover-bg));">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                        <i class="ph-fill ph-robot text-blue-500"></i> AI Data Engine
+                    </h3>
+
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 24px;">
+                        Simulate the autonomous fetching of real-time trending news from global endpoints.
+                    </p>
+
+                    <div class="switch-wrapper">
+                        <span style="font-weight: 600; font-size: 0.9rem;">Auto-Publish Approval</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-wrapper">
+                        <span style="font-weight: 600; font-size: 0.9rem;">High-Frequency Pull</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <button id="auto-news-btn" class="btn btn-primary"
+                        style="width: 100%; justify-content: center; margin-top: 16px;">
+                        <i class="ph-bold ph-arrows-clockwise"></i> Trigger Manual Fetch
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
